@@ -1,0 +1,10 @@
+.preview {
+  height: 100vh;
+  width: 100%;
+  padding: 0 100px;
+  box-sizing: border-box;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  background-color: #FAFAFA;
+}

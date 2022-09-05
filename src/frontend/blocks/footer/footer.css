@@ -1,0 +1,16 @@
+.footer {
+  width: 100%;
+  padding: 0 250px 0;
+  box-sizing: border-box;
+  background-color: #E8E8E8;
+  height: 580px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+
+  font-style: normal;
+  font-weight: 400;
+  font-size: 48px;
+  line-height: 58px;
+  color: #5A5A5A;
+}

@@ -1,0 +1,9 @@
+.input__input-text {
+  margin: 14px 0 27px;
+  width: 404px;
+  height: 73px;
+  border: none;
+  outline: none;
+  background-color: #D9D9D9;
+  font-size: 1rem;
+}
