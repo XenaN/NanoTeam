@@ -37,11 +37,11 @@ const formInputDose = form.querySelector('.input__input-text[name=input-dose]')
 
 form.addEventListener('submit', (evt) => {
   evt.preventDefault()
-  material = formInputMaterial.value
-  hydro_size = formInputHydroSize.value
-  cell_line = formInputCellLine.value
-  time = formInputTIme.value
-  dose = formInputDose.value
+  const material = formInputMaterial.value
+  const hydro_size = formInputHydroSize.value
+  const cell_line = formInputCellLine.value
+  const time = formInputTIme.value
+  const dose = formInputDose.value
 
   api.getPredict(material, hydro_size, cell_line, time, dose)
     .then(res => {
@@ -51,3 +51,21 @@ form.addEventListener('submit', (evt) => {
       }
     })
 })
+
+function checkMinMaxValue(element) {
+  element.addEventListener('blur', () => {
+    const minValue = element.getAttribute('min')
+    const maxValue = element.getAttribute('max')
+  
+    if (Number(element.value) < Number(minValue)) {
+      element.value = minValue
+    }
+    if (Number(element.value) > Number(maxValue)) {
+      element.value = maxValue
+    }
+  })
+}
+
+checkMinMaxValue(formInputHydroSize)
+checkMinMaxValue(formInputTIme)
+checkMinMaxValue(formInputDose)

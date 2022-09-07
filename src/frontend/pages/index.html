@@ -135,7 +135,7 @@
             <span class="input__input-desc">
               hydro_size
             </span>
-            <input class="input__input-text" type="text" name="input-hydro_size" required>
+            <input class="input__input-text" type="text" name="input-hydro_size" min="100" max="300" required>
           </label>
 
           <label class="input__input-container">
@@ -149,14 +149,14 @@
             <span class="input__input-desc">
               time
             </span>
-            <input class="input__input-text" type="text" name="input-time" required>
+            <input class="input__input-text" type="text" name="input-time" min="10" max="96" required>
           </label>
 
           <label class="input__input-container">
             <span class="input__input-desc">
               dose
             </span>
-            <input class="input__input-text" type="text" name="input-dose" required>
+            <input class="input__input-text" type="text" name="input-dose" min="10" max="250" required>
           </label>
 
           <button type="submit">Отправить</button>
@@ -178,8 +178,8 @@
 
           </p>
 
-          <span class="input__score-cont input__score-cont_type_visible">
-            Score: <span class="input__score">86.1231</span>
+          <span class="input__score-cont">
+            Viability: <span class="input__score">86.1231</span>
           </span>
 
         </div>
