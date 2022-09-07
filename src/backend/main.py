@@ -68,6 +68,12 @@ async def predict(data: Data):
 
     return answer
 
+from constants import features
+@app.get('/features')
+async def get_features():
+  return features
+
+
 import uvicorn
 uvicorn.run(app)
 

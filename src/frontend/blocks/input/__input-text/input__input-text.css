@@ -6,4 +6,9 @@
   outline: none;
   background-color: #D9D9D9;
   font-size: 1rem;
+  box-sizing: border-box;
+}
+
+.input__input-text[type=number] {
+  margin-bottom: 0;
 }
