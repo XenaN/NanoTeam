@@ -1,5 +1,5 @@
 .utp__element {
-  width: calc(100% / 4);
+  width: calc((100% - 147px * 2) / 3);
   margin-right: 147px;
   margin-bottom: 100px;
 }

@@ -121,29 +121,45 @@
       </ul>
     </section>
 
-    <section class="input">
+    <section class="input" id="input">
       <div class="page__two-columns">
         <form class="input__form" name="input-form">
           <label class="input__input-container">
             <span class="input__input-desc">
-              Molecular-level
+              material
             </span>
-            <input class="input__input-text" type="text" name="input-name" required>
+            <input class="input__input-text" type="text" name="input-material" required>
           </label>
 
           <label class="input__input-container">
             <span class="input__input-desc">
-              Molecular-level
+              hydro_size
             </span>
-            <input class="input__input-text" type="text" name="input-text1" required>
+            <input class="input__input-text" type="text" name="input-hydro_size" required>
           </label>
 
           <label class="input__input-container">
             <span class="input__input-desc">
-              Molecular-level
+              cell_line
             </span>
-            <input class="input__input-text" type="text" name="input-text2" required>
+            <input class="input__input-text" type="text" name="input-cell_line" required>
           </label>
+
+          <label class="input__input-container">
+            <span class="input__input-desc">
+              time
+            </span>
+            <input class="input__input-text" type="text" name="input-time" required>
+          </label>
+
+          <label class="input__input-container">
+            <span class="input__input-desc">
+              dose
+            </span>
+            <input class="input__input-text" type="text" name="input-dose" required>
+          </label>
+
+          <button type="submit">Отправить</button>
         </form>
 
         <div>
@@ -155,12 +171,16 @@
           <h2 class="input__title">
             Molecular-level solutions to global
           </h2>
-          
+
           <p class="input__desc">
-            Molecular-level Molecular-level Molecular-level Molecular-level Molecular-level 
+            Molecular-level Molecular-level Molecular-level Molecular-level Molecular-level
             Molecular-level Molecular-level Molecular-level Molecular-level
 
           </p>
+
+          <span class="input__score-cont input__score-cont_type_visible">
+            Score: <span class="input__score">86.1231</span>
+          </span>
 
         </div>
       </div>
@@ -170,23 +190,22 @@
       <div class="other__left-photo">
         Тут будет картинка или анимация
       </div>
-      
+
       <div class="other__right__photo">
 
       </div>
-    
+
     </section>
 
-    <footer class="footer">
-      LOGO
-    </footer>
+
 
   </main>
 
-  <footer>
-
+  <footer class="footer">
+    LOGO
   </footer>
 
+  <script src="../js/index.js"></script>
 </body>
 
 </html>

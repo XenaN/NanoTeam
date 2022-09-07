@@ -3,8 +3,8 @@
   padding: 0;
   font-style: normal;
   font-weight: 300;
-  font-size: 96px;
-  line-height: 116px;
+  font-size: 46px;
+  line-height: 1.25;
   color: #5A5A5A;
-  width: 766px;
+  max-width: 466px;
 }
