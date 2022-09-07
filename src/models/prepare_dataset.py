@@ -15,10 +15,11 @@ def prepare_dataset(input_path: str, output_path: List[str]):
     """
     df = pd.read_csv(input_path)
 
-    dataset = pd.get_dummies(df, columns=["material", "cell_line"])
+    for i in df.select_dtypes(include='object').columns:
+        df[i] = df[i].astype('category').cat.codes
 
-    n_train = int(dataset.shape[0] - 1)
-    train, test = dataset.iloc[:n_train], dataset.iloc[n_train:]
+    n_train = int(df.shape[0]*0.9)
+    train, test = df.iloc[:n_train], df.iloc[n_train:]
 
     train.to_csv(output_path[0], index=False)
     test.to_csv(output_path[1], index=False)

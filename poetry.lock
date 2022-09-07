@@ -546,6 +546,14 @@ catalyst = ["catalyst (<=21.12)"]
 all = ["scikit-learn", "pytorch-lightning (>=1.6)", "fastai", "catalyst (<=21.12)", "datasets", "transformers", "lightgbm", "xgboost", "tensorflow", "mmcv", "pillow", "dvc-render[table] (>=0.0.8)"]
 
 [[package]]
+name = "et-xmlfile"
+version = "1.1.0"
+description = "An implementation of lxml.xmlfile for the standard library"
+category = "main"
+optional = false
+python-versions = ">=3.6"
+
+[[package]]
 name = "flatten-dict"
 version = "0.4.2"
 description = "A flexible utility for flattening and unflattening dict-like objects in Python."
@@ -771,6 +779,17 @@ python-versions = ">=3.6"
 [package.dependencies]
 antlr4-python3-runtime = ">=4.9.0,<4.10.0"
 PyYAML = ">=5.1.0"
+
+[[package]]
+name = "openpyxl"
+version = "3.0.10"
+description = "A Python library to read/write Excel 2010 xlsx/xlsm files"
+category = "main"
+optional = false
+python-versions = ">=3.6"
+
+[package.dependencies]
+et-xmlfile = "*"
 
 [[package]]
 name = "packaging"
@@ -1195,7 +1214,7 @@ test = ["zope.testing"]
 [metadata]
 lock-version = "1.1"
 python-versions = "^3.9"
-content-hash = "e6dae6029668a17c94160bff16d52a39a2cfc8512f25260010f57c4109ceefcd"
+content-hash = "a004020f22a74b01d88603c0166ca065f169348dcb3c0d4f89175ec848214d08"
 
 [metadata.files]
 aiohttp = [
@@ -1338,6 +1357,7 @@ dvc-objects = []
 dvc-render = []
 dvc-task = []
 dvclive = []
+et-xmlfile = []
 flatten-dict = [
     {file = "flatten-dict-0.4.2.tar.gz", hash = "sha256:506a96b6e6f805b81ae46a0f9f31290beb5fa79ded9d80dbe1b7fa236ab43076"},
     {file = "flatten_dict-0.4.2-py2.py3-none-any.whl", hash = "sha256:7e245b20c4c718981212210eec4284a330c9f713e632e98765560e05421e48ad"},
@@ -1444,6 +1464,7 @@ nanotime = [
 networkx = []
 numpy = []
 omegaconf = []
+openpyxl = []
 packaging = [
     {file = "packaging-21.3-py3-none-any.whl", hash = "sha256:ef103e05f519cdc783ae24ea4e2e0f508a9c99b2d4969652eed6a2e1ea5bd522"},
     {file = "packaging-21.3.tar.gz", hash = "sha256:dd47c42927d89ab911e606518907cc2d3a1f38bbd026385970643f9c5b8ecfeb"},

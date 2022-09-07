@@ -1,49 +1,69 @@
 schema: '2.0'
 stages:
   prepare_dataset:
-    cmd: python src/models/prepare_dataset.py data/processed/toxic.csv data/processed/train.csv
-      data/processed/test.csv
+    cmd: python src/models/prepare_dataset.py data/interim/Database_3_cleaned.csv
+      data/processed/train.csv data/processed/test.csv
     deps:
-    - path: data/processed/toxic.csv
-      md5: 8e9224a053401ca48345a67822219d7c
-      size: 447
+    - path: data/interim/Database_3_cleaned.csv
+      md5: 25a8365f2fba9112a9689dd38ad3eaf1
+      size: 213402
     - path: src/models/prepare_dataset.py
-      md5: 58475ace29a2c8f6930db5a27eba7f4d
-      size: 977
+      md5: 7115c35beee456a1759d2a5f1b56522e
+      size: 804
     outs:
     - path: data/processed/test.csv
-      md5: ed2bf23beb651c9a0e6005afaf7fc589
-      size: 332
+      md5: c0a85076099317eb0df6f6c857dc85dc
+      size: 11453
     - path: data/processed/train.csv
-      md5: 44c93596ef2d2b5211969ba7c3f5d636
-      size: 1363
+      md5: 816010693d995046b66fcf3aa6a8eeb5
+      size: 98772
   train:
     cmd: python src/models/train.py  data/processed/train.csv data/processed/test.csv
-      models/model.clf
+      models/model.clf models/scaler.save
     deps:
     - path: data/processed/test.csv
-      md5: ed2bf23beb651c9a0e6005afaf7fc589
-      size: 332
+      md5: c0a85076099317eb0df6f6c857dc85dc
+      size: 11453
     - path: data/processed/train.csv
-      md5: 44c93596ef2d2b5211969ba7c3f5d636
-      size: 1363
+      md5: 816010693d995046b66fcf3aa6a8eeb5
+      size: 98772
     - path: src/models/train.py
-      md5: e1b510c6a5d5fe76eb2dd2ee2f543e2f
-      size: 936
+      md5: aeeb7150610578f325f598c761cc5916
+      size: 1274
     outs:
     - path: models/model.clf
-      md5: b64f7e7aaeae069e92ccb2a5172228e9
-      size: 121480
+      md5: b3275e7139c94c369e21e52177c033a7
+      size: 3011444
+    - path: models/scaler.save
+      md5: 4ee6989ddb8e296533cb0e78c60ac769
+      size: 1787
   evaluate:
-    cmd: python src/models/evaluate.py  data/processed/test.csv models/model.clf reports/scores.json
+    cmd: python src/models/evaluate.py  data/processed/test.csv models/model.clf models/scaler.save
+      reports/scores.json
     deps:
     - path: models/model.clf
-      md5: b64f7e7aaeae069e92ccb2a5172228e9
-      size: 121480
+      md5: b3275e7139c94c369e21e52177c033a7
+      size: 3011444
+    - path: models/scaler.save
+      md5: 4ee6989ddb8e296533cb0e78c60ac769
+      size: 1787
     - path: src/models/evaluate.py
-      md5: 7a718d9456e18e052727063a891b46a9
-      size: 934
+      md5: fcd3699a3a93ba996a833a682ea29508
+      size: 1047
     outs:
     - path: reports/scores.json
-      md5: 675f1a1679644bbbbc673f6a789443d5
-      size: 55
+      md5: 804827f428c6617cc94410b3abfdb685
+      size: 54
+  clean_data:
+    cmd: python src/data/clean.py data/raw/Database_3.xlsx data/interim/Database_3_cleaned.csv
+    deps:
+    - path: data/raw/Database_3.xlsx
+      md5: 5a093260d491924083ac218e59f088b7
+      size: 528185
+    - path: src/data/clean.py
+      md5: b56d8715095db69f2545fb84239e13b6
+      size: 754
+    outs:
+    - path: data/interim/Database_3_cleaned.csv
+      md5: 25a8365f2fba9112a9689dd38ad3eaf1
+      size: 213402
