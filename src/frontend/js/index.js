@@ -1,6 +1,7 @@
 class Api {
   constructor() {
-    this._url = 'http://127.0.0.1:8000'
+    // this._url = 'http://127.0.0.1:8000'
+    this._url = 'http://77.222.42.233'
   }
 
   _checkResponse(res) {
