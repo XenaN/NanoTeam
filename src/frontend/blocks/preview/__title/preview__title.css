@@ -2,24 +2,24 @@
   margin: 0;
   padding: 0;
   font-weight: 300;
-  font-size: 82px;
+  font-size: 72px;
   padding-bottom: 40px;
   border-bottom: 1px solid #aaa;
   color: #5A5A5A;
   margin-left: 50px;
-  width: 630px;
+  width: 560px;
   position: absolute;
   left:100px;
-  top:250px;
+  top:220px;
   z-index:2;
 }
 .preview__title-h3 {
-  font-size: 26px;
+  font-size: 18px;
   line-height: 1.25;
   color: #a5a5a5;
   position: absolute;
   left:150px;
-  top:500px;
+  top:450px;
   z-index:2;
 }
 .preview__title_button {
@@ -35,7 +35,7 @@
     position: absolute;
     z-index:2;
     left:150px;
-    top: 600px;
+    top: 530px;
 }
 .preview__title_button:hover {
     background-color: #BF55AF;
