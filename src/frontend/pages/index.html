@@ -19,7 +19,7 @@
     <nav class="header__nav">
       <a class="page__link" href="#">Contacts</a>
       <a class="page__link" href="#">Our Team</span></a>
-      <a class="page__header_button" href="#">Calculation</a>
+      <a class="page__header_button" href="#input">Calculation</a>
     </nav>
   </header>
 
@@ -28,7 +28,7 @@
     <section class="preview">
       <h1 class="preview__title">Online Laboratory "NanoTech"</h1>
       <p class="preview__title-h3">Measure the effect of substances on a human cell</p>
-      <a class="preview__title_button" href="#">Measure influence</a>
+      <a class="preview__title_button" href="#input">Measure influence</a>
       <div class="preview__photo">
         <img src="../images/intro_image.png" alt="Cells photo">
       </div>
@@ -162,82 +162,163 @@
 
     <!-- 04 -->
     <section class="input" id="input">
-      <div class="page__two-columns">
-        <form class="input__form" name="input-form">
-          <label class="input__input-container">
-            <span class="input__input-desc">
-              material
-            </span>
-            <!-- <input class="input__input-text" type="text" name="input-material" required> -->
-            <select class="input__input-text" name="input-material" required>
-              <option>Выберите материал</option>
-            </select>
-          </label>
-
-          <label class="input__input-container">
-            <span class="input__input-desc">
-              hydro_size
-            </span>
-            <input class="input__input-text" type="number" name="input-hydro_size" min="100" 
-            max="300" required placeholder="Введите число">
-            <input class="input__input-text" type="range" name="input-hydro_size-polzunok" min="100" 
-            max="300" required placeholder="Введите число">
-          </label>
-
-          <label class="input__input-container">
-            <span class="input__input-desc">
-              cell_type
-            </span>
-            <!-- <input class="input__input-text" type="text" name="input-cell_line" required> -->
-            <select class="input__input-text" name="input-cell_type" required>
-              <option>Выберите тип</option>
-            </select>
-          </label>
-
-          <label class="input__input-container">
-            <span class="input__input-desc">
-              time
-            </span>
-            <input class="input__input-text" type="number" name="input-time" min="10"
-             max="96" required placeholder="Введите число">
-             <input class="input__input-text" type="range" name="input-time-polzunok" min="10"
-             max="96" required placeholder="Введите число">
-          </label>
-
-          <label class="input__input-container">
-            <span class="input__input-desc">
-              dose
-            </span>
-            <input class="input__input-text" type="number" name="input-dose" min="10" 
-            max="250" required placeholder="Введите число">
-            <input class="input__input-text" type="range" name="input-dose-polzunok" min="10" 
-            max="250" required placeholder="Введите число">
-          </label>
-
-          <button type="submit">Отправить</button>
-        </form>
-
-        <div>
+      <div>
           <div class="utp__row input__breadcrumbs">
             <span class="page__line-before page__line-before_type_gray"></span>
-            <span class="utp__breadcrumbs">Bring the power</span>
+            <span class="utp__breadcrumbs">Measure influence</span>
           </div>
 
-          <h2 class="input__title">
-            Molecular-level solutions to global
-          </h2>
-
-          <p class="input__desc">
-            Molecular-level Molecular-level Molecular-level Molecular-level Molecular-level
-            Molecular-level Molecular-level Molecular-level Molecular-level
-
-          </p>
+          <h2 class="input__title">Enter your features</h2>
 
           <span class="input__score-cont">
             Viability: <span class="input__score">86.1231</span>
           </span>
 
         </div>
+      <div class="page__two-columns">
+        <form class="input__form" name="input-form">
+
+          <!-- 1 -->
+          <label class="input__input-container">
+            <span class="input__input-desc">01. Material</span>
+            <!-- <input class="input__input-text" type="text" name="input-material" required> -->
+            <select class="input__input-text" name="input-material" required>
+              <option>Выберите материал</option>
+            </select>
+          </label>
+
+          <!-- 2 -->
+          <label class="input__input-container">
+            <span class="input__input-desc">02. Coat Functional Group </span>
+            <!-- <input class="input__input-text" type="text" name="input-material" required> -->
+            <select class="input__input-text" name="input-material" required>
+              <option>Выберите материал</option>
+            </select>
+          </label>
+
+          <!-- 3 -->
+          <label class="input__input-container">
+            <span class="input__input-desc">03. Cell Type</span>
+            <!-- <input class="input__input-text" type="text" name="input-cell_line" required> -->
+            <select class="input__input-text" name="input-cell_type" required>
+              <option>Выберите тип</option>
+            </select>
+          </label>
+
+          <!-- 4 -->
+          <label class="input__input-container">
+            <span class="input__input-desc">04. Shape</span>
+            <!-- <input class="input__input-text" type="text" name="input-material" required> -->
+            <select class="input__input-text" name="input-material" required>
+              <option>Выберите материал</option>
+            </select>
+          </label>
+
+          <!-- 5 -->
+          <label class="input__input-container">
+            <span class="input__input-desc">05. Cell Tissue</span>
+            <!-- <input class="input__input-text" type="text" name="input-material" required> -->
+            <select class="input__input-text" name="input-material" required>
+              <option>Выберите материал</option>
+            </select>
+          </label>
+
+          <!-- 6 -->
+          <label class="input__input-container">
+            <span class="input__input-desc">06. Cell Motphology</span>
+            <!-- <input class="input__input-text" type="text" name="input-cell_line" required> -->
+            <select class="input__input-text" name="input-cell_type" required>
+              <option>Выберите тип</option>
+            </select>
+          </label>
+
+          <!-- 7 -->
+          <label class="input__input-container">
+            <span class="input__input-desc">07. Cell Age</span>
+            <!-- <input class="input__input-text" type="text" name="input-material" required> -->
+            <select class="input__input-text" name="input-material" required>
+              <option>Выберите материал</option>
+            </select>
+          </label>
+
+          <!-- 8 -->
+          <label class="input__input-container">
+            <span class="input__input-desc">08. Cell Line </span>
+            <!-- <input class="input__input-text" type="text" name="input-material" required> -->
+            <select class="input__input-text" name="input-material" required>
+              <option>Выберите материал</option>
+            </select>
+          </label>
+
+          <!-- 9 -->
+          <label class="input__input-container">
+            <span class="input__input-desc">09. Cell Type</span>
+            <!-- <input class="input__input-text" type="text" name="input-cell_line" required> -->
+            <select class="input__input-text" name="input-cell_type" required>
+              <option>Выберите тип</option>
+            </select>
+          </label>
+
+
+          <!-- 10 -->
+          <label class="input__input-container">
+            <span class="input__input-desc">10. Time</span>
+            <input class="input__input-text" type="number" name="input-time" min="10"
+             max="96" required placeholder="Введите число">
+             <input class="input__input-text" type="range" name="input-time-polzunok" min="10"
+             max="96" required placeholder="Введите число">
+          </label>
+
+          <!-- 11 -->
+          <label class="input__input-container">
+            <span class="input__input-desc">11. Time</span>
+            <input class="input__input-text" type="number" name="input-dose" min="10" 
+            max="250" required placeholder="Введите число">
+            <input class="input__input-text" type="range" name="input-dose-polzunok" min="10" 
+            max="250" required placeholder="Введите число">
+          </label>
+
+          <!-- 12 -->
+          <label class="input__input-container">
+            <span class="input__input-desc">12. Concentration</span>
+            <input class="input__input-text" type="number" name="input-hydro_size" min="100"
+            max="300" required placeholder="Введите число">
+            <input class="input__input-text" type="range" name="input-hydro_size-polzunok" min="100"
+            max="300" required placeholder="Введите число">
+          </label>
+
+          <!-- 13 -->
+          <label class="input__input-container">
+            <span class="input__input-desc">13. Size in Water</span>
+            <input class="input__input-text" type="number" name="input-time" min="10"
+             max="96" required placeholder="Введите число">
+             <input class="input__input-text" type="range" name="input-time-polzunok" min="10"
+             max="96" required placeholder="Введите число">
+          </label>
+
+          <!-- 14 -->
+          <label class="input__input-container">
+            <span class="input__input-desc">14. Zeta in Water</span>
+            <input class="input__input-text" type="number" name="input-dose" min="10"
+            max="250" required placeholder="Введите число">
+            <input class="input__input-text" type="range" name="input-dose-polzunok" min="10"
+            max="250" required placeholder="Введите число">
+          </label>
+
+          <!-- 15 -->
+          <label class="input__input-container">
+            <span class="input__input-desc">15. Diameter</span>
+            <input class="input__input-text" type="number" name="input-hydro_size" min="100"
+            max="300" required placeholder="Введите число">
+            <input class="input__input-text" type="range" name="input-hydro_size-polzunok" min="100"
+            max="300" required placeholder="Введите число">
+          </label>
+
+
+
+          <button type="submit">Submit</button>
+        </form>
+
       </div>
     </section>
 

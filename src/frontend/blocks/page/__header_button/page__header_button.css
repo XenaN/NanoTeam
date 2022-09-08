@@ -7,9 +7,11 @@
     text-transform: uppercase;
     cursor: pointer;
     border-radius: 50px;
+    height: 200px;
     padding: 15px 47px 16px 47px;
+    border: 2px solid #DB62C9;
 }
 .page__header_button:hover {
-    background-color: #BF55AF;
-    transform: 0.2;
+    background-color: #fff;
+    color: #BF55AF;
 }

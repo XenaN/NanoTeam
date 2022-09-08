@@ -1,8 +1,10 @@
 .input__input-text {
-  margin: 14px 0 27px;
-  width: 204px;
-  height: 33px;
+  margin: 10px 0 10px;
+  width: 280px;
+  height: 40px;
   border: none;
+  padding: 0 15px;
+  border-radius: 50px;
   outline: none;
   background-color: #D9D9D9;
   font-size: 1rem;
