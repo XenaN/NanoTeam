@@ -7,4 +7,5 @@
   padding: 15px 0;
   align-items: center;
   position: absolute;
+  z-index:1;
 }
