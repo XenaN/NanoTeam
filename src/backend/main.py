@@ -1,18 +1,14 @@
-from this import s
-from fastapi import FastAPI, File, UploadFile
+import json
+
+from fastapi import FastAPI
 from fastapi.middleware.cors import CORSMiddleware
 import joblib as jb
 import pandas as pd
-from sklearn.preprocessing import OneHotEncoder
-import json
-
 from pydantic import BaseModel
+import uvicorn
 
-from typing import Dict
 
-from constants import features, features_values, data_conf
-
-# from data_request_model import *
+from constants import features_values, data_conf
 
 path_model = '../../models/model.clf'
 path_scaler = '../../models/scaler.save'
@@ -21,9 +17,7 @@ path_codes = '../../models/codes.json'
 
 app = FastAPI()
 
-origins = [
-    "*",
-]
+origins = ["*"]
 
 app.add_middleware(
     CORSMiddleware,
@@ -49,22 +43,24 @@ codes_keys = codes.keys()
 
 data_conf_inverted = dict(zip(data_conf.values(), data_conf.keys()))
 
+
 class Data(BaseModel):
-  coat_functional_froup: str
-  concentration: float
-  shape: str
-  time: float
-  material: str
-  cell_tissue: str
-  size_in_water: float
-  cell_motphology: str
-  cell_age: str
-  cell_line: str
-  cell_type: str
-  no_of_cells: float
-  zeta_in_water: float
-  diameter: float
-  cell_source: str
+    coat_functional_froup: str
+    concentration: float
+    shape: str
+    time: float
+    material: str
+    cell_tissue: str
+    size_in_water: float
+    cell_motphology: str
+    cell_age: str
+    cell_line: str
+    cell_type: str
+    no_of_cells: float
+    zeta_in_water: float
+    diameter: float
+    cell_source: str
+
 
 @app.post('/model')
 async def predict(data: Data):
@@ -87,25 +83,16 @@ async def predict(data: Data):
 
     return answer
 
+
 @app.get('/features')
 async def get_features():
-  answer = {}
+    answer = {}
+    for feature in features_values.keys():
+        this_key = data_conf_inverted[feature]
+        answer[this_key] = features_values[feature]
 
-  for feature in features_values.keys():
-    this_key = data_conf_inverted[feature]
-    answer[this_key] = features_values[feature]
-
-  return answer
+    return answer
 
 
-import uvicorn
 uvicorn.run(app)
 
-
-{
-  "material": "CuO",
-  "hydro_size": "257.0",
-  "cell_line": "A549",
-  "time": "80",
-  "dose": "100.0"
-}
