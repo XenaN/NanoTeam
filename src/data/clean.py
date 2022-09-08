@@ -49,6 +49,7 @@ def clean(input_path: str, output_path: str):
                "Article_ID"], axis=1, inplace=True)
     data.dropna(inplace=True)
     data["Zeta_in_Water (mV)"] = data["Zeta_in_Water (mV)"].astype('float32')
+    data["Shape"] = data["Shape"].str.replace('Iregular', 'Irregular')
     columns_to_clean = ["Diameter (nm)", "No_of_Cells (cells/well)", "Concentration (ug/ml)"]
 
     data = removal_outliers(data, columns_to_clean, 0, 0.99)
