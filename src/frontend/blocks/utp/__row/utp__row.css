@@ -1,5 +1,18 @@
 .utp__row {
   display: flex;
-  padding-top: 150px;
+  padding-top: 180px;
   align-items: center;
+}
+.utp__row-back {
+    width: 210px;
+    border-left: 1px solid #f9f9f9;
+    height: 1380px;
+}
+
+.row-relative {
+    position: relative;
+}
+.row-grid {
+    display: grid;
+    grid-template-columns: repeat(6, 1fr);
 }

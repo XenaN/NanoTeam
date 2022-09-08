@@ -4,3 +4,13 @@
   padding: 0 100px 0 150px;
   box-sizing: border-box;
 }
+.utp01 {
+  background-color: #fafafa;
+  width: 100%;
+  padding: 0 100px 0 150px;
+  box-sizing: border-box;
+}
+.utp__content {
+    position:absolute;
+    top:0;
+}
