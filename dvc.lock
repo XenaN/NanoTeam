@@ -1,0 +1,75 @@
+schema: '2.0'
+stages:
+  prepare_dataset:
+    cmd: python src/models/prepare_dataset.py data/interim/Database_3_cleaned.csv
+      data/processed/train.csv data/processed/test.csv
+    deps:
+    - path: data/interim/Database_3_cleaned.csv
+      md5: 9007c7bc2fa52485e40333f1e0d30604
+      size: 183981
+    - path: models/features.json
+      md5: 5477c080ecf29196093bd9acab4c4ffd
+      size: 1004
+    - path: src/models/prepare_dataset.py
+      md5: 73ad21ce56ea82d533a6e9afdb6fc0e6
+      size: 1021
+    outs:
+    - path: data/processed/test.csv
+      md5: d779f495f419e3b05924058d051d95e6
+      size: 8107
+    - path: data/processed/train.csv
+      md5: fbfda9e1c31d01842cf5d77ba463cda5
+      size: 70674
+  train:
+    cmd: python src/models/train.py  data/processed/train.csv data/processed/test.csv
+      models/model.clf models/scaler.save
+    deps:
+    - path: data/processed/test.csv
+      md5: d779f495f419e3b05924058d051d95e6
+      size: 8107
+    - path: data/processed/train.csv
+      md5: fbfda9e1c31d01842cf5d77ba463cda5
+      size: 70674
+    - path: models/parameters.json
+      md5: 3a8eea1b28d43a5fa9dda85e1ef8ea77
+      size: 114
+    - path: src/models/train.py
+      md5: aeeb7150610578f325f598c761cc5916
+      size: 1274
+    outs:
+    - path: models/model.clf
+      md5: 89c070528b3f853b277e5a14744cd65b
+      size: 3049460
+    - path: models/scaler.save
+      md5: b6e18b14284cc0decf02fe300561023e
+      size: 1504
+  evaluate:
+    cmd: python src/models/evaluate.py  data/processed/test.csv models/model.clf models/scaler.save
+      reports/scores.json
+    deps:
+    - path: models/model.clf
+      md5: 89c070528b3f853b277e5a14744cd65b
+      size: 3049460
+    - path: models/scaler.save
+      md5: b6e18b14284cc0decf02fe300561023e
+      size: 1504
+    - path: src/models/evaluate.py
+      md5: fcd3699a3a93ba996a833a682ea29508
+      size: 1047
+    outs:
+    - path: reports/scores.json
+      md5: 64cafed481e467d3320019d8b46a8bc7
+      size: 54
+  clean_data:
+    cmd: python src/data/clean.py data/raw/Database_3.xlsx data/interim/Database_3_cleaned.csv
+    deps:
+    - path: data/raw/Database_3.xlsx
+      md5: b035645442352e43dee201ec552514f3
+      size: 528185
+    - path: src/data/clean.py
+      md5: bb645bc18bc6178b8cb0745bb78eec79
+      size: 1747
+    outs:
+    - path: data/interim/Database_3_cleaned.csv
+      md5: 9007c7bc2fa52485e40333f1e0d30604
+      size: 183981
