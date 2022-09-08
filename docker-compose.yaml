@@ -6,11 +6,11 @@ services:
     container_name: model_service
     ports:
       - "8000:8000"
-    command: uvicorn backend.main_old:app --reload --workers 1 --host 0.0.0.0 --port 8000
-#
-#  frontend:
-#    container_name: nginx
-#    image: nginx
-#    restart: always
-#    ports:
-#      - 9001:80
+    command: uvicorn backend.main:app --reload --workers 1 --host 0.0.0.0 --port 8000
+
+  frontend:
+    container_name: nginx
+    image: nginx
+    restart: always
+    ports:
+      - 3000:80
