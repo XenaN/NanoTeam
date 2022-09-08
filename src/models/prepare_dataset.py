@@ -2,11 +2,13 @@ import click
 import json
 from typing import List
 
+import numpy
 import pandas as pd
 from sklearn.model_selection import train_test_split
 
 
 FEATURES_PATH = "models/features.json"
+CODES_PATH = "models/codes.json"
 
 
 @click.command()
@@ -20,8 +22,13 @@ def prepare_dataset(input_path: str, output_path: List[str]):
     """
     df = pd.read_csv(input_path)
 
+    codes = {}
     for i in df.select_dtypes(include='object').columns:
+        codes[i] = dict(enumerate(df[i].astype('category').cat.categories))
         df[i] = df[i].astype('category').cat.codes
+
+    with open(CODES_PATH, 'w') as json_file:
+        json.dump(codes, json_file)
 
     with open(FEATURES_PATH) as json_file:
         features = json.load(json_file)

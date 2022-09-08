@@ -55,7 +55,7 @@ def clean(input_path: str, output_path: str):
     data = removal_outliers(data, columns_to_clean, 0, 0.99)
 
     data["Cell_Viability (%)"] = abs(data["Cell_Viability (%)"])
-    data[data["Cell_Viability (%)"] > 100] = 100
+    data[data["Cell_Viability (%)"] > 100]["Cell_Viability (%)"] = 100
 
     data.to_csv(output_path, index=False)
 
