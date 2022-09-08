@@ -4,14 +4,20 @@ from fastapi.middleware.cors import CORSMiddleware
 import joblib as jb
 import pandas as pd
 from sklearn.preprocessing import OneHotEncoder
+import json
 
 from pydantic import BaseModel
 
-from typing import List
+from typing import Dict
+
+from constants import features, features_values
 
 # from data_request_model import *
 
-path_model = './model.clf'
+path_model = '../../models/model.clf'
+path_scaler = '../../models/scaler.save'
+path_features = '../../models/features.json'
+path_codes = '../../models/codes.json'
 
 app = FastAPI()
 
@@ -27,51 +33,77 @@ app.add_middleware(
     allow_headers=["*"],
 )
 
-class Data(BaseModel):
-  material: str
-  hydro_size: str
-  cell_line: str
-  time: str
-  dose: str
-
 model = jb.load(path_model)
+scaler = jb.load(path_scaler)
+
+with open(path_features) as f:
+    features = json.load(f)
+features = features['important']
+features.remove('Cell_Viability (%)')
+
+with open(path_codes) as f:
+    codes = json.load(f)
+for codes_key in codes.keys():
+    codes[codes_key] =  dict(zip(codes[codes_key].values(), codes[codes_key].keys()))
+codes_keys = codes.keys()
+
+class Data(BaseModel):
+  coat_functional_froup: str
+  concentration: float
+  shape: str
+  time: float
+  material: str
+  cell_tissue: str
+  size_in_water: float
+  cell_motphology: str
+  cell_age: str
+  cell_line: str
+  cell_type: str
+  no_of_cells: float
+  zeta_in_water: float
+  diameter: float
+  cell_source: str
+
+data_conf = {'coat_functional_froup': 'Coat/Functional Group',
+ 'concentration': 'Concentration (ug/ml)',
+ 'shape': 'Shape',
+ 'time': 'Time (hr)',
+ 'material': 'Material',
+ 'cell_tissue': 'Cell_Tissue',
+ 'size_in_water' :'Size_in_Water (nm)',
+ 'cell_motphology': 'Cell_Morphology',
+ 'cell_age': 'Cell_Age',
+ 'cell_line': 'Cell Line_Primary Cell',
+ 'cell_type': 'Cell_Type',
+ 'no_of_cells': 'No_of_Cells (cells/well)',
+ 'zeta_in_water': 'Zeta_in_Water (mV)',
+ 'diameter': 'Diameter (nm)',
+ 'cell_source': 'Cell_Source'}
 
 @app.post('/model')
 async def predict(data: Data):
-    enc = OneHotEncoder()
-    df = pd.read_csv('toxic.csv')
-    df = df.drop('viability', axis=1)
-    enc_data = pd.DataFrame(enc.fit_transform(df[["material", "cell_line"]]).toarray())
+    data = dict(data)
+    input_features = {}
+    for feature in data.keys():
+        this_input = data[feature]
+        this_feature = data_conf[feature]
+        if this_feature in codes_keys:
+            this_input = codes[this_feature][this_input]
+        input_features[this_feature] = this_input
 
-    new_df = df.join(enc_data)
-    dataset = pd.get_dummies(new_df, columns=["material", "cell_line"])
+    test_X = pd.DataFrame(input_features, index=[0])
 
-    # material = 'CuO'
-    # hydro_size = 257.0
-    # cell_line = 'A549'
-    # time = 80
-    # dose = 100.0
-    data = {'material': [data.material], 'hydro_size': [float(data.hydro_size)], 
-      'cell_line': [data.cell_line], 'time': [float(data.time)], 'dose': [float(data.dose)]}
+    test_X = scaler.transform(test_X)
 
-    df_new = pd.DataFrame(data, index=[13])
-    df = df.append(df_new)
+    y_predicted = model.predict(test_X)
 
-    enc_data = pd.DataFrame(enc.fit_transform(df[["material", "cell_line"]]).toarray())
-
-    new_df = df.join(enc_data)
-    dataset = pd.get_dummies(new_df, columns=["material", "cell_line"])
-
-    y_predicted = model.predict(dataset)
-
-    answer = y_predicted[-1]
+    answer = y_predicted[0]
 
     return answer
 
-from constants import features
 @app.get('/features')
 async def get_features():
-  return features
+  return features_values
 
 
 import uvicorn
