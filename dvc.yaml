@@ -12,6 +12,7 @@ stages:
     deps:
       - data/interim/Database_3_cleaned.csv
       - src/models/prepare_dataset.py
+      - models/features.json
     outs:
       - data/processed/train.csv
       - data/processed/test.csv
@@ -22,6 +23,7 @@ stages:
       - data/processed/train.csv
       - data/processed/test.csv
       - src/models/train.py
+      - models/parameters.json
     outs:
       - models/model.clf
       - models/scaler.save

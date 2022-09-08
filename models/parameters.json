@@ -1,7 +1,7 @@
 {
   "n_estimators": 100,
   "bootstrap": true,
-  "max_depth": 9,
+  "max_depth": 10,
   "max_features": "auto",
   "criterion": "mse"
 }
