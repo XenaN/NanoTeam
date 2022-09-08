@@ -66,6 +66,22 @@ features_values = {'Coat/Functional Group': ['None', 'PVP', 'Chitosan', 'Poloxam
  'Cell_Age': ['Adult', 'Embryonic', 'Fetus'], 
  'Cell Line_Primary Cell': ['L', 'P']}
 
+data_conf = {'coat_functional_froup': 'Coat/Functional Group',
+ 'concentration': 'Concentration (ug/ml)',
+ 'shape': 'Shape',
+ 'time': 'Time (hr)',
+ 'material': 'Material',
+ 'cell_tissue': 'Cell_Tissue',
+ 'size_in_water' :'Size_in_Water (nm)',
+ 'cell_motphology': 'Cell_Morphology',
+ 'cell_age': 'Cell_Age',
+ 'cell_line': 'Cell Line_Primary Cell',
+ 'cell_type': 'Cell_Type',
+ 'no_of_cells': 'No_of_Cells (cells/well)',
+ 'zeta_in_water': 'Zeta_in_Water (mV)',
+ 'diameter': 'Diameter (nm)',
+ 'cell_source': 'Cell_Source'}
+
 
 {
   "coat_functional_froup": "PVP",

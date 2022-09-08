@@ -10,7 +10,7 @@ from pydantic import BaseModel
 
 from typing import Dict
 
-from constants import features, features_values
+from constants import features, features_values, data_conf
 
 # from data_request_model import *
 
@@ -47,6 +47,8 @@ for codes_key in codes.keys():
     codes[codes_key] =  dict(zip(codes[codes_key].values(), codes[codes_key].keys()))
 codes_keys = codes.keys()
 
+data_conf_inverted = dict(zip(data_conf.values(), data_conf.keys()))
+
 class Data(BaseModel):
   coat_functional_froup: str
   concentration: float
@@ -63,22 +65,6 @@ class Data(BaseModel):
   zeta_in_water: float
   diameter: float
   cell_source: str
-
-data_conf = {'coat_functional_froup': 'Coat/Functional Group',
- 'concentration': 'Concentration (ug/ml)',
- 'shape': 'Shape',
- 'time': 'Time (hr)',
- 'material': 'Material',
- 'cell_tissue': 'Cell_Tissue',
- 'size_in_water' :'Size_in_Water (nm)',
- 'cell_motphology': 'Cell_Morphology',
- 'cell_age': 'Cell_Age',
- 'cell_line': 'Cell Line_Primary Cell',
- 'cell_type': 'Cell_Type',
- 'no_of_cells': 'No_of_Cells (cells/well)',
- 'zeta_in_water': 'Zeta_in_Water (mV)',
- 'diameter': 'Diameter (nm)',
- 'cell_source': 'Cell_Source'}
 
 @app.post('/model')
 async def predict(data: Data):
@@ -103,7 +89,13 @@ async def predict(data: Data):
 
 @app.get('/features')
 async def get_features():
-  return features_values
+  answer = {}
+
+  for feature in features_values.keys():
+    this_key = data_conf_inverted[feature]
+    answer[this_key] = features_values[feature]
+
+  return answer
 
 
 import uvicorn

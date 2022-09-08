@@ -128,29 +128,36 @@
             <span class="input__input-desc">
               material
             </span>
-            <!-- <input class="input__input-text" type="text" name="input-material" required> -->
             <select class="input__input-text" name="input-material" required>
-              <option>Выберите материал</option>
+              <option>Input material</option>
             </select>
           </label>
 
           <label class="input__input-container">
             <span class="input__input-desc">
-              hydro_size
+              coat_functional_froup
             </span>
-            <input class="input__input-text" type="number" name="input-hydro_size" min="100" 
-            max="300" required placeholder="Введите число">
-            <input class="input__input-text" type="range" name="input-hydro_size-polzunok" min="100" 
-            max="300" required placeholder="Введите число">
+            <select class="input__input-text" name="input-coat_functional_froup" required>
+              <option>Input coat_functional_froup</option>
+            </select>
           </label>
 
           <label class="input__input-container">
             <span class="input__input-desc">
-              cell_type
+              concentration
             </span>
-            <!-- <input class="input__input-text" type="text" name="input-cell_line" required> -->
-            <select class="input__input-text" name="input-cell_type" required>
-              <option>Выберите тип</option>
+            <input class="input__input-text" type="number" name="input-concentration" min="0" 
+            max="1500" required placeholder="Input number">
+            <input class="input__input-text" type="range" name="input-concentration-polzunok" min="0" 
+            max="1500" required placeholder="Input number">
+          </label>
+
+          <label class="input__input-container">
+            <span class="input__input-desc">
+              shape
+            </span>
+            <select class="input__input-text" name="input-shape" required>
+              <option>Input shape</option>
             </select>
           </label>
 
@@ -158,20 +165,104 @@
             <span class="input__input-desc">
               time
             </span>
-            <input class="input__input-text" type="number" name="input-time" min="10"
-             max="96" required placeholder="Введите число">
-             <input class="input__input-text" type="range" name="input-time-polzunok" min="10"
-             max="96" required placeholder="Введите число">
+            <input class="input__input-text" type="number" name="input-time" min="0" 
+            max="1500" required placeholder="Input number">
+            <input class="input__input-text" type="range" name="input-time-polzunok" min="0" 
+            max="1500" required placeholder="Input number">
           </label>
 
           <label class="input__input-container">
             <span class="input__input-desc">
-              dose
+              cell_tissue
             </span>
-            <input class="input__input-text" type="number" name="input-dose" min="10" 
-            max="250" required placeholder="Введите число">
-            <input class="input__input-text" type="range" name="input-dose-polzunok" min="10" 
-            max="250" required placeholder="Введите число">
+            <select class="input__input-text" name="input-cell_tissue" required>
+              <option>Input cell_tissue</option>
+            </select>
+          </label>
+
+          <label class="input__input-container">
+            <span class="input__input-desc">
+              size_in_water
+            </span>
+            <input class="input__input-text" type="number" name="input-size_in_water" min="0" 
+            max="1500" required placeholder="Input number">
+            <input class="input__input-text" type="range" name="input-size_in_water-polzunok" min="0" 
+            max="1500" required placeholder="Input number">
+          </label>
+
+          <label class="input__input-container">
+            <span class="input__input-desc">
+              cell_motphology
+            </span>
+            <select class="input__input-text" name="input-cell_motphology" required>
+              <option>Input cell_motphology</option>
+            </select>
+          </label>
+
+          <label class="input__input-container">
+            <span class="input__input-desc">
+              cell_age
+            </span>
+            <select class="input__input-text" name="input-cell_age" required>
+              <option>Input cell_age</option>
+            </select>
+          </label>
+
+          <label class="input__input-container">
+            <span class="input__input-desc">
+              cell_line
+            </span>
+            <select class="input__input-text" name="input-cell_line" required>
+              <option>Input cell_line</option>
+            </select>
+          </label>
+
+          <label class="input__input-container">
+            <span class="input__input-desc">
+              cell_type
+            </span>
+            <select class="input__input-text" name="input-cell_type" required>
+              <option>Input cell_type</option>
+            </select>
+          </label>
+
+          <label class="input__input-container">
+            <span class="input__input-desc">
+              no_of_cells
+            </span>
+            <input class="input__input-text" type="number" name="input-no_of_cells" min="0" 
+            max="1500" required placeholder="Input number">
+            <input class="input__input-text" type="range" name="input-no_of_cells-polzunok" min="0" 
+            max="1500" required placeholder="Input number">
+          </label>
+
+          <label class="input__input-container">
+            <span class="input__input-desc">
+              zeta_in_water
+            </span>
+            <input class="input__input-text" type="number" name="input-zeta_in_water" min="0" 
+            max="1500" required placeholder="Input number">
+            <input class="input__input-text" type="range" name="input-zeta_in_water-polzunok" min="0" 
+            max="1500" required placeholder="Input number">
+          </label>
+
+          <label class="input__input-container">
+            <span class="input__input-desc">
+              diameter
+            </span>
+            <input class="input__input-text" type="number" name="input-diameter" min="0" 
+            max="1500" required placeholder="Input number">
+            <input class="input__input-text" type="range" name="input-diameter-polzunok" min="0" 
+            max="1500" required placeholder="Input number">
+          </label>
+
+          <label class="input__input-container">
+            <span class="input__input-desc">
+              cell_source
+            </span>
+            <select class="input__input-text" name="input-cell_source" required>
+              <option>Input cell_source</option>
+            </select>
           </label>
 
           <button type="submit">Отправить</button>
