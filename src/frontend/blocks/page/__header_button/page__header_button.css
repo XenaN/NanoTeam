@@ -1,0 +1,15 @@
+.page__header_button {
+    background-color: #DB62C9;
+    color: #fff;
+    text-decoration: none;
+    text-align: center;
+    font-size: 15px;
+    text-transform: uppercase;
+    cursor: pointer;
+    border-radius: 50px;
+    padding: 15px 47px 16px 47px;
+}
+.page__header_button:hover {
+    background-color: #BF55AF;
+    transform: 0.2;
+}

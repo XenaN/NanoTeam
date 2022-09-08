@@ -1,4 +1,8 @@
 .page__link {
   text-decoration: none;
   color: inherit;
+  padding: 0 20px;
+}
+.page__link:last-of-type {
+    padding-right: 50px;
 }

@@ -1,9 +1,10 @@
 .header {
-  width: calc(100% - 200px);
+  width: calc(100% - 100px);
   display: flex;
   justify-content: space-between;
-  margin: 39px 0;
   align-items: center;
-
-  position: fixed;
+  margin: 0;
+  padding: 15px 0;
+  align-items: center;
+  position: absolute;
 }

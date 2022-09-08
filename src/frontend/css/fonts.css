@@ -1,0 +1,11 @@
+@font-face {
+  font-family: "ArialNovaLight";
+  font-style: light;
+  font-weight: 300;
+  /* Браузер сначала попробует найти шрифт локально */
+  src: local("ArialNovaLight"),
+       /* Если не получилось, загрузит woff2 */
+       url("/font/ArialNova-Light.woff2") format("woff2"),
+       /* Если браузер не поддерживает woff2, загрузит woff */
+       url("/font/ArialNova-Light.woff") format("woff");
+}
