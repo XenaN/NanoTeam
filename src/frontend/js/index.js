@@ -12,8 +12,8 @@ class Api {
   }
 
   getPredict(material, coat_functional_froup, concentration, shape, time,
-    cell_tissue, size_in_water, cell_motphology, cell_age, cell_line, cell_type, no_of_cells,
-    zeta_in_water, diameter, cell_source) {
+      cell_tissue, size_in_water, cell_motphology, cell_age, cell_line, cell_type, no_of_cells,
+      zeta_in_water, diameter, cell_source) {
     return fetch(this._url + '/model', {
       method: 'POST',
       body: JSON.stringify({
@@ -79,14 +79,12 @@ form.addEventListener('submit', (evt) => {
   const cell_source = formInputCellSource.value
 
   api.getPredict(material, coat_functional_froup, concentration, shape, time,
-    cell_tissue, size_in_water, cell_motphology, cell_age, cell_line, cell_type, no_of_cells,
-    zeta_in_water, diameter, cell_source)
+      cell_tissue, size_in_water, cell_motphology, cell_age, cell_line, cell_type, no_of_cells,
+      zeta_in_water, diameter, cell_source)
     .then(res => {
-      if (res) {
+      if(res) {
         score.textContent = String(Number(res).toFixed(3))
         scoreContainer.classList.add(activeClass)
-
-        scoreContainer.scrollIntoView(false)
       }
     })
 })
@@ -95,7 +93,7 @@ function checkMinMaxValue(element) {
   element.addEventListener('blur', () => {
     const minValue = element.getAttribute('min')
     const maxValue = element.getAttribute('max')
-
+  
     if (Number(element.value) < Number(minValue)) {
       element.value = minValue
     }
@@ -112,8 +110,7 @@ checkMinMaxValue(formInputNoOfCells)
 checkMinMaxValue(formInputZetaInWater)
 checkMinMaxValue(formInputDiameter)
 
-const catFeatures = {
-  'coat_functional_froup': formInputCoatFunctionalFroup,
+const catFeatures = {'coat_functional_froup': formInputCoatFunctionalFroup,
   'shape': formInputShape,
   'material': formInputMaterial,
   'cell_tissue': formInputCellTissue,
@@ -140,7 +137,7 @@ api.getFeatures()
 
       catFeaturesList = Array.from(Object.keys(catFeatures))
       numFeaturesList = Array.from(Object.keys(numFeatures))
-
+      
       featuresKeys = Array.from(Object.keys(features))
       // console.log(featuresKeys)
       // console.log(catFeaturesList)
@@ -149,15 +146,13 @@ api.getFeatures()
 
         if (catFeaturesList.includes(item)) {
           const thisElement = catFeatures[item]
-          if (thisElement) {
-            const option = thisElement.querySelector('option')
-            features[item].forEach((featureItem, index) => {
-              const newObject = option.cloneNode(true)
-              newObject.textContent = featureItem
-              thisElement.append(newObject)
-            })
-            option.disabled = 'True'
-          }
+          const option = thisElement.querySelector('option')
+          features[item].forEach((featureItem, index) => {
+            const newObject = option.cloneNode(true)
+            newObject.textContent = featureItem
+            thisElement.append(newObject)
+          })
+          option.disabled = 'True'
         }
 
         if (numFeaturesList.includes(item)) {

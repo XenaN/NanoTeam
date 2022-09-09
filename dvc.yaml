@@ -1,0 +1,38 @@
+stages:
+  clean_data:
+    cmd: python src/data/clean.py data/raw/Database_3.xlsx data/interim/Database_3_cleaned.csv
+    deps:
+      - data/raw/Database_3.xlsx
+      - src/data/clean.py
+    outs:
+        - data/interim/Database_3_cleaned.csv
+
+  prepare_dataset:
+    cmd: python src/models/prepare_dataset.py data/interim/Database_3_cleaned.csv data/processed/train.csv data/processed/test.csv
+    deps:
+      - data/interim/Database_3_cleaned.csv
+      - src/models/prepare_dataset.py
+      - models/features.json
+    outs:
+      - data/processed/train.csv
+      - data/processed/test.csv
+
+  train:
+    cmd: python src/models/train.py  data/processed/train.csv data/processed/test.csv models/model.clf models/scaler.save
+    deps:
+      - data/processed/train.csv
+      - data/processed/test.csv
+      - src/models/train.py
+      - models/parameters.json
+    outs:
+      - models/model.clf
+      - models/scaler.save
+
+  evaluate:
+    cmd: python src/models/evaluate.py  data/processed/test.csv models/model.clf models/scaler.save reports/scores.json
+    deps:
+      - models/model.clf
+      - src/models/evaluate.py
+      - models/scaler.save
+    metrics:
+      - reports/scores.json
