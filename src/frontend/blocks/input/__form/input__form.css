@@ -20,4 +20,5 @@
 .input__form button:hover {
     background-color: #fff;
     color: #BF55AF;
+    cursor: pointer;
 }

@@ -1,6 +1,6 @@
 .input__score-cont {
   /* display: block; */
-  display: inline-block;
+  display: none;
   margin-top: 50px;
   font-size: 72px;
   color: #fff;
