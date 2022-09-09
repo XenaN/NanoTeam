@@ -40,6 +40,7 @@
 @import url(../blocks/input/__score-cont/input__score-cont.css);
 @import url(../blocks/input/__score-cont/_type/input__score-cont_type_visible.css);
 @import url(../blocks/input/__result/input__result.css);
+@import url(../blocks/input/__result-img/input__result-img.css);
 
 @import url(../blocks/other/other.css);
 
