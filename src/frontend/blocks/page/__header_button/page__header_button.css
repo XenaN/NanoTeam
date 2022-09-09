@@ -8,10 +8,12 @@
     cursor: pointer;
     border-radius: 50px;
     height: 200px;
+    margin-left: 20px;
     padding: 15px 47px 16px 47px;
     border: 2px solid #DB62C9;
 }
 .page__header_button:hover {
     background-color: #fff;
     color: #BF55AF;
+    border-bottom: 1px solid #BF55AF;
 }

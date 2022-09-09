@@ -18,7 +18,7 @@
 
     <nav class="header__nav">
       <a class="page__link" href="#">Contacts</a>
-      <a class="page__link" href="#">Our Team</span></a>
+      <a class="page__link" href="#">Our Team</a>
       <a class="page__header_button" href="#input">Calculation</a>
     </nav>
   </header>
@@ -167,14 +167,9 @@
             <span class="page__line-before page__line-before_type_gray"></span>
             <span class="utp__breadcrumbs">Measure influence</span>
           </div>
-
           <h2 class="input__title">Enter your features</h2>
+      </div>
 
-          <span class="input__score-cont">
-            Viability: <span class="input__score">86.1231</span>
-          </span>
-
-        </div>
       <div class="page__two-columns">
         <form class="input__form" name="input-form">
 
@@ -262,7 +257,7 @@
 
           <!-- 10 -->
           <label class="input__input-container">
-            <span class="input__input-desc">10. Time</span>
+            <span class="input__input-desc">10. No of Cells</span>
             <input class="input__input-text" type="number" name="input-time" min="10"
              max="96" required placeholder="Введите число">
              <input class="input__input-text" type="range" name="input-time-polzunok" min="10"
@@ -314,12 +309,14 @@
             max="300" required placeholder="Введите число">
           </label>
 
+          <button class="input__form__button" type="submit">Submit</button>
 
-
-          <button type="submit">Submit</button>
         </form>
 
       </div>
+
+            <span class="input__score-cont">Viability: <span class="input__score">86.1231</span></span>
+
     </section>
 
     <!-- <section class="other">
@@ -338,7 +335,49 @@
   </main>
 
   <footer class="footer">
-    LOGO
+    <div class="footer-left">
+
+        <img src="../images/logo.png" alt="NanoTech Logo" class="futer__logo">
+                  <div class="contacts-icon">
+                        <div><a href="#"><img src='../images/youtube_1.png' class="youtube"></img></a></div>
+                        <div><a href="#"><img src='../images/vk_1.png' class="vk"></i></a></div>
+                        <div><a href="#"><img src='../images/telegram_1.png' class="telegram-grey"></i></a></div>
+                    </div>
+      <div class="map-contacts-grid">
+
+                    <div class="footer-tel">
+                            <a class="link-tel" href="" +79999999999>+7 (999) 999-99-99</a>
+                    </div>
+                    </div>
+                    <div class="footer-mail">
+                        <a class="footer__a" href="mailto:#">info@itmo.ru</a>
+                    </div>
+                    <div>
+                        <p class="footer__p">194044, St. Petersburg, Program street, house 2</p>
+                    </div>
+      </div>
+
+    <div class="footer-form">
+      <h2 class="utp__title">
+        Contact us
+      </h2>
+      <form class="form_validation" action="#">
+        <div>
+          <input type="text" name="guest-name" placeholder="Name"  class="guest-name">
+        </div>
+        <div>
+          <input type="tel" name="phone" placeholder="Phone"  class="guest-phone">
+
+        </div>
+
+        <div class="submit_politics">
+          <input type="submit" value="Отправить" class="validate_btn">
+          <p class="ppt2">By clicking the "Submit" button,<br>I accept the terms
+            <a href="#" class="t2-link">Privacy Policy</a>
+          </p>
+        </div>
+      </form>
+    </div>
   </footer>
 
   <script src="../js/index.js"></script>

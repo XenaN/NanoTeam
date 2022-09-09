@@ -1,16 +1,119 @@
 .footer {
   width: 100%;
-  padding: 0 250px 0;
+  padding: 0 200px 0 150px;
   box-sizing: border-box;
-  background-color: #E8E8E8;
+  background-color: #fff;
   height: 580px;
   display: flex;
-  justify-content: center;
+  justify-content: space-between;
   align-items: center;
-
   font-style: normal;
   font-weight: 400;
   font-size: 48px;
   line-height: 58px;
   color: #5A5A5A;
+}
+.footer-form {
+    height: 100%;
+    padding-left: 100px;
+    background-color: #fafafa;
+}
+.footer-form h2{
+    margin-top:100px;
+}
+.validate_btn {
+    margin-top: 20px;
+    text-decoration: none;
+    height:50px;
+    width: 350px;
+    font-size: 15px;
+    border:none;
+    border-radius: 50px;
+    text-transform: uppercase;
+    color: #BF55AF;
+    background-color: #fafafa;
+    border: 2px solid #DB62C9;
+}
+.validate_btn:hover {
+    color: #fff;
+    background-color: #DB62C9;
+}
+
+.guest-name, .guest-phone {
+  font-weight: 300;
+  font-size: 16px;
+  line-height: 30px;
+  color: #fff;
+  text-decoration: none;
+  padding: 0 15px;
+  margin: 10px 0 10px;
+  width: 350px;
+  height: 50px;
+  border: none;
+  padding: 0 15px;
+  border-radius: 50px;
+  outline: none;
+  background-color: #f0f0f0;
+  font-size: 1rem;
+  box-sizing: border-box;
+}
+.ppt2 {
+    padding: 0 0 0 15px;
+    font-size: 16px;
+    line-height: 1.2;
+
+}
+.t2-link {
+    font-size: 16px;
+    color: #333;
+}
+.t2-link:hover {
+    color: #BF55AF;
+}
+/*--------------------*/
+.futer__logo {
+    width: 200px;
+    margin-top: -35px;
+    padding: 0 50px 10px 0;
+}
+.contacts-icon {
+    padding-left: 20px;
+    margin-top:-20px;
+    margin-bottom: 10px;
+
+}
+.contacts-icon div{
+    padding-left:10px;
+    display: inline-block;
+    opacity: 0.5;
+}
+.contacts-icon img {
+    width: 30px;
+}
+.footer-left {
+    padding-right:100px;
+}
+.footer-tel {
+    height:60px;
+}
+.link-tel {
+    text-decoration: none;
+    width:400px;
+    font-size: 28px;
+    color: #5a5a5a;
+    cursor: pointer;
+}
+.contacts-icon div:hover, .footer__a:hover, .link-tel:hover {
+    color: #BF55AF;
+    opacity: 1;
+}
+.footer__a, .footer__p {
+margin-top: 10px;
+line-height: 1.5;
+    color: #5a5a5a;
+    text-decoration: none;
+    font-size: 18px;
+}
+.footer-mail {
+    margin-top: -10px;
 }

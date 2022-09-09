@@ -3,6 +3,7 @@
   color: inherit;
   padding: 0 20px;
 }
-.page__link:last-of-type {
-    padding-right: 50px;
+.page__link:hover {
+    color: #BF55AF;
 }
+
