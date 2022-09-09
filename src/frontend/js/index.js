@@ -62,6 +62,12 @@ const threshold = document.querySelector('.input__input-text[name=threshold]')
 const thresholdPolzunok = document.querySelector('.input__input-text[name=threshold-polzunok]')
 
 const result = document.querySelector('.input__result')
+const resultImg = document.querySelector('.input__result-img')
+
+const resultGoodText = ""
+const resultGoodImg = "./images/smile-alive.png"
+const resultBadText = ""
+const resultBadImg = "./images/smile-dead.png"
 
 
 form.addEventListener('submit', (evt) => {
@@ -95,14 +101,16 @@ form.addEventListener('submit', (evt) => {
         if (res > 100) {
           scoreValue = 100
         }
-        score.textContent = String(Number(scoreValue).toFixed(3))
+        score.textContent = String(Number(scoreValue).toFixed(2))
         scoreContainer.classList.add(activeClass)
 
         if (Number(scoreValue) >= Number(threshold.value)) {
-          result.textContent = "Выживет"
+          result.textContent = resultGoodText
+          resultImg.src = resultGoodImg
         }
         else {
-          result.textContent = "Умрет"
+          result.textContent = resultBadText
+          resultImg.src = resultBadImg
         }
 
         scoreContainer.scrollIntoView(false)
@@ -211,10 +219,12 @@ inputRangeList.forEach((item, index) => {
 threshold.addEventListener('change', () => {
   thresholdPolzunok.value = threshold.value
   if (Number(score.textContent) >= threshold.value) {
-    result.textContent = "Выживет"
+    result.textContent = resultGoodText
+    resultImg.src = resultGoodImg
   }
   else {
-    result.textContent = "Умрет"
+    result.textContent = resultBadText
+    resultImg.src = resultBadImg
   }
 })
 
@@ -222,10 +232,12 @@ threshold.addEventListener('change', () => {
 thresholdPolzunok.addEventListener('input', () => {
   threshold.value = thresholdPolzunok.value
   if (Number(score.textContent) >= threshold.value) {
-    result.textContent = "Выживет"
+    result.textContent = resultGoodText
+    resultImg.src = resultGoodImg
   }
   else {
-    result.textContent = "Умрет"
+    result.textContent = resultBadText
+    resultImg.src = resultBadImg
   }
 })
 
