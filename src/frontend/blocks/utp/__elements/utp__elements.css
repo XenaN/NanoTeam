@@ -1,0 +1,9 @@
+.utp__elements {
+  list-style-type: none;
+  margin: 0;
+  padding: 0;
+  display: flex;
+  flex-wrap: wrap;
+  margin-top: 123px;
+  width: 100%;
+}

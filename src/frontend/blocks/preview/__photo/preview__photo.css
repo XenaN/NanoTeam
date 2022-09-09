@@ -1,0 +1,15 @@
+.preview__photo {
+  width: 330px;
+  height: 340px;
+  background-color: #D0D0D0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  font-style: normal;
+  font-weight: 300;
+  font-size: 24px;
+  line-height: 29px;
+  text-transform: uppercase;
+  color: #000000;
+}

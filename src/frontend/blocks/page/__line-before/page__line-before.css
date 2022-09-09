@@ -1,0 +1,7 @@
+.page__line-before {
+  display: inline-block;
+  width: 82px;
+  height: 3px;
+  background-color: #D9D9D9;
+  margin-right: 24px;
+}
