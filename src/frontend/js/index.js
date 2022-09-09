@@ -58,6 +58,11 @@ const formInputZetaInWater = form.querySelector('.input__input-text[name=input-z
 const formInputDiameter = form.querySelector('.input__input-text[name=input-diameter]')
 const formInputCellSource = form.querySelector('.input__input-text[name=input-cell_source]')
 
+const threshold = document.querySelector('.input__input-text[name=threshold]')
+const thresholdPolzunok = document.querySelector('.input__input-text[name=threshold-polzunok]')
+
+const result = document.querySelector('.input__result')
+
 
 form.addEventListener('submit', (evt) => {
   evt.preventDefault()
@@ -82,9 +87,23 @@ form.addEventListener('submit', (evt) => {
     cell_tissue, size_in_water, cell_motphology, cell_age, cell_line, cell_type, no_of_cells,
     zeta_in_water, diameter, cell_source)
     .then(res => {
-      if (res) {
-        score.textContent = String(Number(res).toFixed(3))
+      if (res || res === 0) {
+        scoreValue = res
+        if (res < 0) {
+          scoreValue = 0
+        }
+        if (res > 100) {
+          scoreValue = 100
+        }
+        score.textContent = String(Number(scoreValue).toFixed(3))
         scoreContainer.classList.add(activeClass)
+
+        if (Number(scoreValue) >= Number(threshold.value)) {
+          result.textContent = "Выживет"
+        }
+        else {
+          result.textContent = "Умрет"
+        }
 
         scoreContainer.scrollIntoView(false)
       }
@@ -111,6 +130,7 @@ checkMinMaxValue(formInputSizeInWater)
 checkMinMaxValue(formInputNoOfCells)
 checkMinMaxValue(formInputZetaInWater)
 checkMinMaxValue(formInputDiameter)
+checkMinMaxValue(threshold)
 
 const catFeatures = {
   'coat_functional_froup': formInputCoatFunctionalFroup,
@@ -154,6 +174,7 @@ api.getFeatures()
             features[item].forEach((featureItem, index) => {
               const newObject = option.cloneNode(true)
               newObject.textContent = featureItem
+              newObject.value = featureItem
               thisElement.append(newObject)
             })
             option.disabled = 'True'
@@ -186,3 +207,25 @@ inputRangeList.forEach((item, index) => {
     inputNumberList[index].value = item.value
   })
 })
+
+threshold.addEventListener('change', () => {
+  thresholdPolzunok.value = threshold.value
+  if (Number(score.textContent) >= threshold.value) {
+    result.textContent = "Выживет"
+  }
+  else {
+    result.textContent = "Умрет"
+  }
+})
+
+
+thresholdPolzunok.addEventListener('input', () => {
+  threshold.value = thresholdPolzunok.value
+  if (Number(score.textContent) >= threshold.value) {
+    result.textContent = "Выживет"
+  }
+  else {
+    result.textContent = "Умрет"
+  }
+})
+

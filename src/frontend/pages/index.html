@@ -177,7 +177,7 @@
           <label class="input__input-container">
             <span class="input__input-desc">01. Material</span>
             <select class="input__input-text" name="input-material" required>
-              <option>Input material</option>
+              <option value="">Input material</option>
             </select>
           </label>
 
@@ -185,7 +185,7 @@
           <label class="input__input-container">
             <span class="input__input-desc">02. Coat Functional Group </span>
             <select class="input__input-text" name="input-coat_functional_froup" required>
-              <option>Input Coat Functional Group</option>
+              <option value="">Input Coat Functional Group</option>
             </select>
           </label>
 
@@ -193,7 +193,7 @@
           <label class="input__input-container">
             <span class="input__input-desc">03. Cell Type</span>
             <select class="input__input-text" name="input-cell_type" required>
-              <option>Input Cell Type</option>
+              <option value="">Input Cell Type</option>
             </select>
           </label>
 
@@ -201,7 +201,7 @@
           <label class="input__input-container">
             <span class="input__input-desc">04. Shape</span>
             <select class="input__input-text" name="input-shape" required>
-              <option>Input shape</option>
+              <option value="">Input shape</option>
             </select>
           </label>
 
@@ -209,7 +209,7 @@
           <label class="input__input-container">
             <span class="input__input-desc">05. Cell Tissue</span>
             <select class="input__input-text" name="input-cell_tissue" required>
-              <option>Input Cell Tissue</option>
+              <option value="">Input Cell Tissue</option>
             </select>
           </label>
 
@@ -217,7 +217,7 @@
           <label class="input__input-container">
             <span class="input__input-desc">06. Cell Motphology</span>
             <select class="input__input-text" name="input-cell_motphology" required>
-              <option>Input Cell Motphology</option>
+              <option value="">Input Cell Motphology</option>
             </select>
           </label>
 
@@ -225,7 +225,7 @@
           <label class="input__input-container">
             <span class="input__input-desc">07. Cell Age</span>
             <select class="input__input-text" name="input-cell_age" required>
-              <option>Input Cell Age</option>
+              <option value="">Input Cell Age</option>
             </select>
           </label>
 
@@ -233,7 +233,7 @@
           <label class="input__input-container">
             <span class="input__input-desc">08. Cell Line </span>
             <select class="input__input-text" name="input-cell_line" required>
-              <option>Input Cell Line</option>
+              <option value="">Input Cell Line</option>
             </select>
           </label>
 
@@ -241,7 +241,7 @@
           <label class="input__input-container">
             <span class="input__input-desc">09. Cell Source</span>
             <select class="input__input-text" name="input-cell_source" required>
-              <option>Input Cell Source</option>
+              <option value="">Input Cell Source</option>
             </select>
           </label>
 
@@ -306,7 +306,22 @@
 
       </div>
 
-            <span class="input__score-cont" id="score">Viability: <span class="input__score">86.1231</span></span>
+            <div class="input__score-cont">
+              <label class="input__input-container">
+                <span class="input__input-desc">
+                  Threshold
+                </span>
+                <input class="input__input-text" type="number" name="threshold" min="0"
+                max="100" required placeholder="Input number" value="50">
+                <input class="input__input-text" type="range" name="threshold-polzunok" min="0"
+                max="100" required placeholder="Input number">
+              </label>
+              <span class="input__result"></span>
+              Viability: 
+              <span class="input__score">
+                86.1231
+              </span>
+            </div>
 
     </section>
 
