@@ -64,9 +64,9 @@ const thresholdPolzunok = document.querySelector('.input__input-text[name=thresh
 const result = document.querySelector('.input__result')
 const resultImg = document.querySelector('.input__result-img')
 
-const resultGoodText = "Выживет"
+const resultGoodText = ""
 const resultGoodImg = "./images/smile-alive.png"
-const resultBadText = "Умрет"
+const resultBadText = ""
 const resultBadImg = "./images/smile-dead.png"
 
 
@@ -101,7 +101,7 @@ form.addEventListener('submit', (evt) => {
         if (res > 100) {
           scoreValue = 100
         }
-        score.textContent = String(Number(scoreValue).toFixed(3))
+        score.textContent = String(Number(scoreValue).toFixed(2))
         scoreContainer.classList.add(activeClass)
 
         if (Number(scoreValue) >= Number(threshold.value)) {
