@@ -6,9 +6,8 @@ import joblib as jb
 import pandas as pd
 from pydantic import BaseModel
 import uvicorn
-
-
 from constants import features_values, data_conf
+
 
 path_model = '../../models/model.clf'
 path_scaler = '../../models/scaler.save'
@@ -94,5 +93,5 @@ async def get_features():
     return answer
 
 
-uvicorn.run(app)
+# uvicorn.run(app)
 

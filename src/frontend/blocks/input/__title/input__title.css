@@ -1,10 +1,10 @@
 .input__title {
-  margin: 27px 0 0 0;
+  margin: 27px 0 100px 0;
   padding: 0;
   font-style: normal;
   font-weight: 300;
-  font-size: 46px;
+  font-size: 72px;
   line-height: 1.25;
-  color: #5A5A5A;
-  max-width: 466px;
+  color: #fff;
+  max-width: 800px;
 }

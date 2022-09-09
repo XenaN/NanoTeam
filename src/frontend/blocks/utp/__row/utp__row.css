@@ -1,5 +1,20 @@
 .utp__row {
   display: flex;
-  padding-top: 90px;
+  padding-top: 180px;
   align-items: center;
+}
+.utp__row-back {
+    width: 210px;
+    border-left: 1px solid #f9f9f9;
+    height: 1450px;
+}
+.utp__row-back:last-of-type {
+    width: 0px;
+}
+.row-relative {
+    position: relative;
+}
+.row-grid {
+    display: grid;
+    grid-template-columns: repeat(6, 1fr);
 }

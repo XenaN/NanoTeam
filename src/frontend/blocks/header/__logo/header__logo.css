@@ -1,9 +1,5 @@
 .header__logo {
-  margin: 0;
-  padding: 0;
-  font-style: normal;
-  font-weight: 300;
-  font-size: 48px;
-  line-height: 58px;
-  color: #5A5A5A;
+  weight: 118px;
+  height: 68px;
+  background: url(images/logo.png) no-repeat;
 }

@@ -1,0 +1,144 @@
+@font-face {
+    font-family: 'Arial Nova';
+    src: url('ArialNova-Bold.eot');
+    src: local('Arial Nova Bold'), local('ArialNova-Bold'),
+        url('ArialNova-Bold.eot?#iefix') format('embedded-opentype'),
+        url('ArialNova-Bold.woff2') format('woff2'),
+        url('ArialNova-Bold.woff') format('woff'),
+        url('ArialNova-Bold.ttf') format('truetype');
+    font-weight: bold;
+    font-style: normal;
+}
+
+@font-face {
+    font-family: 'Arial Nova';
+    src: url('ArialNova-Light.eot');
+    src: local('Arial Nova Light'), local('ArialNova-Light'),
+        url('ArialNova-Light.eot?#iefix') format('embedded-opentype'),
+        url('ArialNova-Light.woff2') format('woff2'),
+        url('ArialNova-Light.woff') format('woff'),
+        url('ArialNova-Light.ttf') format('truetype');
+    font-weight: 300;
+    font-style: normal;
+}
+
+@font-face {
+    font-family: 'Arial Nova Cond';
+    src: url('ArialNovaCond-Italic.eot');
+    src: local('Arial Nova Cond Italic'), local('ArialNovaCond-Italic'),
+        url('ArialNovaCond-Italic.eot?#iefix') format('embedded-opentype'),
+        url('ArialNovaCond-Italic.woff2') format('woff2'),
+        url('ArialNovaCond-Italic.woff') format('woff'),
+        url('ArialNovaCond-Italic.ttf') format('truetype');
+    font-weight: normal;
+    font-style: italic;
+}
+
+@font-face {
+    font-family: 'Arial Nova';
+    src: url('ArialNova.eot');
+    src: local('Arial Nova'), local('ArialNova'),
+        url('ArialNova.eot?#iefix') format('embedded-opentype'),
+        url('ArialNova.woff2') format('woff2'),
+        url('ArialNova.woff') format('woff'),
+        url('ArialNova.ttf') format('truetype');
+    font-weight: normal;
+    font-style: normal;
+}
+
+@font-face {
+    font-family: 'Arial Nova';
+    src: url('ArialNova-LightItalic.eot');
+    src: local('Arial Nova Light Italic'), local('ArialNova-LightItalic'),
+        url('ArialNova-LightItalic.eot?#iefix') format('embedded-opentype'),
+        url('ArialNova-LightItalic.woff2') format('woff2'),
+        url('ArialNova-LightItalic.woff') format('woff'),
+        url('ArialNova-LightItalic.ttf') format('truetype');
+    font-weight: 300;
+    font-style: italic;
+}
+
+@font-face {
+    font-family: 'Arial Nova Cond';
+    src: url('ArialNovaCond-LightItalic.eot');
+    src: local('Arial Nova Cond Light Italic'), local('ArialNovaCond-LightItalic'),
+        url('ArialNovaCond-LightItalic.eot?#iefix') format('embedded-opentype'),
+        url('ArialNovaCond-LightItalic.woff2') format('woff2'),
+        url('ArialNovaCond-LightItalic.woff') format('woff'),
+        url('ArialNovaCond-LightItalic.ttf') format('truetype');
+    font-weight: 300;
+    font-style: italic;
+}
+
+@font-face {
+    font-family: 'Arial Nova Cond';
+    src: url('ArialNovaCond.eot');
+    src: local('Arial Nova Cond'), local('ArialNovaCond'),
+        url('ArialNovaCond.eot?#iefix') format('embedded-opentype'),
+        url('ArialNovaCond.woff2') format('woff2'),
+        url('ArialNovaCond.woff') format('woff'),
+        url('ArialNovaCond.ttf') format('truetype');
+    font-weight: normal;
+    font-style: normal;
+}
+
+@font-face {
+    font-family: 'Arial Nova';
+    src: url('ArialNova-Italic.eot');
+    src: local('Arial Nova Italic'), local('ArialNova-Italic'),
+        url('ArialNova-Italic.eot?#iefix') format('embedded-opentype'),
+        url('ArialNova-Italic.woff2') format('woff2'),
+        url('ArialNova-Italic.woff') format('woff'),
+        url('ArialNova-Italic.ttf') format('truetype');
+    font-weight: normal;
+    font-style: italic;
+}
+
+@font-face {
+    font-family: 'Arial Nova Cond';
+    src: url('ArialNovaCond-Bold.eot');
+    src: local('Arial Nova Cond Bold'), local('ArialNovaCond-Bold'),
+        url('ArialNovaCond-Bold.eot?#iefix') format('embedded-opentype'),
+        url('ArialNovaCond-Bold.woff2') format('woff2'),
+        url('ArialNovaCond-Bold.woff') format('woff'),
+        url('ArialNovaCond-Bold.ttf') format('truetype');
+    font-weight: bold;
+    font-style: normal;
+}
+
+@font-face {
+    font-family: 'Arial Nova Cond';
+    src: url('ArialNovaCond-Light.eot');
+    src: local('Arial Nova Cond Light'), local('ArialNovaCond-Light'),
+        url('ArialNovaCond-Light.eot?#iefix') format('embedded-opentype'),
+        url('ArialNovaCond-Light.woff2') format('woff2'),
+        url('ArialNovaCond-Light.woff') format('woff'),
+        url('ArialNovaCond-Light.ttf') format('truetype');
+    font-weight: 300;
+    font-style: normal;
+}
+
+@font-face {
+    font-family: 'Arial Nova Cond';
+    src: url('ArialNovaCond-BoldItalic.eot');
+    src: local('Arial Nova Cond Bold Italic'), local('ArialNovaCond-BoldItalic'),
+        url('ArialNovaCond-BoldItalic.eot?#iefix') format('embedded-opentype'),
+        url('ArialNovaCond-BoldItalic.woff2') format('woff2'),
+        url('ArialNovaCond-BoldItalic.woff') format('woff'),
+        url('ArialNovaCond-BoldItalic.ttf') format('truetype');
+    font-weight: bold;
+    font-style: italic;
+}
+
+@font-face {
+    font-family: 'Arial Nova';
+    src: url('ArialNova-BoldItalic.eot');
+    src: local('Arial Nova Bold Italic'), local('ArialNova-BoldItalic'),
+        url('ArialNova-BoldItalic.eot?#iefix') format('embedded-opentype'),
+        url('ArialNova-BoldItalic.woff2') format('woff2'),
+        url('ArialNova-BoldItalic.woff') format('woff'),
+        url('ArialNova-BoldItalic.ttf') format('truetype');
+    font-weight: bold;
+    font-style: italic;
+}
+

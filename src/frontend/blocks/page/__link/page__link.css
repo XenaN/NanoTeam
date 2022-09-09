@@ -1,4 +1,9 @@
 .page__link {
   text-decoration: none;
   color: inherit;
+  padding: 0 20px;
 }
+.page__link:hover {
+    color: #BF55AF;
+}
+

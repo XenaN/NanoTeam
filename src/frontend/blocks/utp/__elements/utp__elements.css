@@ -4,6 +4,15 @@
   padding: 0;
   display: flex;
   flex-wrap: wrap;
-  margin-top: 123px;
+  margin-top: 120px;
+  width: 100%;
+}
+.utp__elements01 {
+  list-style-type: none;
+  margin: 0;
+  padding: 0;
+  display: flex;
+  flex-wrap: wrap;
+  margin-top: 50px;
   width: 100%;
 }

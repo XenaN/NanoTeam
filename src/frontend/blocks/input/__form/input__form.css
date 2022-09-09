@@ -1,5 +1,24 @@
 .input__form {
-  display: flex;
-  flex-direction: column;
-  margin: 60px 150px 0 0;
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    column-gap: 140px;
+    row-gap: 35px;
+}
+
+.input__form__button {
+    margin-top: 20px;
+    text-decoration: none;
+    height:55px;
+    font-size: 15px;
+    border:none;
+    border-radius: 50px;
+    text-transform: uppercase;
+    color: #fff;
+    background-color: #DB62C9;
+    border: 2px solid #DB62C9;
+}
+.input__form button:hover {
+    background-color: #fff;
+    color: #BF55AF;
+    cursor: pointer;
 }
