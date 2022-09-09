@@ -1,11 +1,45 @@
 .preview__title {
   margin: 0;
   padding: 0;
-  font-style: normal;
   font-weight: 300;
-  font-size: 46px;
-  line-height: 1.25;
+  font-size: 72px;
+  padding-bottom: 35px;
+  border-bottom: 1px solid #e0e0e0;
   color: #5A5A5A;
-  margin-left: 150px;
-  width: 400px;
+  margin-left: 50px;
+  width: 580px;
+  position: absolute;
+  left:100px;
+  top:220px;
+  z-index:2;
+}
+.preview__title-h3 {
+  font-size: 18px;
+  line-height: 1.25;
+  color: #a5a5a5;
+  position: absolute;
+  left:150px;
+  top:450px;
+  z-index:2;
+}
+.preview__title_button {
+    border: 2px solid #DB62C9;
+    color: #BF55AF;
+    text-decoration: none;
+    text-align: center;
+    font-size: 15px;
+    text-transform: uppercase;
+    cursor: pointer;
+    border-radius: 60px;
+    padding: 15px 47px 16px 47px;
+    position: absolute;
+    z-index:2;
+    left:150px;
+    top: 530px;
+}
+.preview__title_button:hover {
+    background-color: #BF55AF;
+    transform: 0.2;
+    color: #fff;
+}
 }

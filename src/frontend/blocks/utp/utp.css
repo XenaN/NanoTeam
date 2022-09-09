@@ -1,6 +1,16 @@
 .utp {
-  background-color: #8E8E8E;
+  background-color: #fff;
   width: 100%;
-  padding: 0 100px 0 250px;
+  padding: 0 100px 0 150px;
   box-sizing: border-box;
+}
+.utp01 {
+  background-color: #fafafa;
+  width: 100%;
+  padding: 0 100px 0 150px;
+  box-sizing: border-box;
+}
+.utp__content {
+    position:absolute;
+    top:0;
 }

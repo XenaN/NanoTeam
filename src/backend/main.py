@@ -1,3 +1,4 @@
+from this import s
 from fastapi import FastAPI, File, UploadFile
 from fastapi.middleware.cors import CORSMiddleware
 import joblib as jb
@@ -27,11 +28,11 @@ app.add_middleware(
 )
 
 class Data(BaseModel):
-    material: str
-    hydro_size: str
-    cell_line: str
-    time: str
-    dose: str
+  material: str
+  hydro_size: str
+  cell_line: str
+  time: str
+  dose: str
 
 model = jb.load(path_model)
 
@@ -66,3 +67,21 @@ async def predict(data: Data):
     answer = y_predicted[-1]
 
     return answer
+
+from constants import features
+@app.get('/features')
+async def get_features():
+  return features
+
+
+import uvicorn
+uvicorn.run(app)
+
+
+{
+  "material": "CuO",
+  "hydro_size": "257.0",
+  "cell_line": "A549",
+  "time": "80",
+  "dose": "100.0"
+}

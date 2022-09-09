@@ -1,5 +1,9 @@
 .input__score-cont {
+  /* display: block; */
   display: none;
-  margin-top: 35px;
-  font-size: 42px;
+  margin-top: 50px;
+  font-size: 72px;
+  color: #fff;
+  width: 550px;
+  margin-left: 420px;
 }
