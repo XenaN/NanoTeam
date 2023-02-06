@@ -10,7 +10,10 @@ Experts provided us with data that is not included in this repository. This data
 The visual representation can be seen in the [video](https://www.youtube.com/watch?v=7CakE3jBf0U&ab_channel=NadezhdaKondrateva)
 
 ### Team
-XenaN - data science, domain expert
-zhuDmi - data science, product
-PureDagmar - frontend, ui/ux 
-evalyev - backend, frontend 
+*XenaN* - data science, domain expert
+
+*zhuDmi* - data science, product
+
+*PureDagmar* - frontend, ui/ux 
+
+*evalyev* - backend, frontend 
